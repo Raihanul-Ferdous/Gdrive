@@ -1,0 +1,22 @@
+require 'rubygems'
+require 'google/api_client'
+require 'launchy'
+
+CLIENT_ID ='902607644279-eum9khth3qp566t7jq0elie53n2g51br.apps.googleusercontent.com'
+CLIENT_SECRET='byVHzb5G0fMShxsfYFM5O4e3'
+OAUTH_SCOPE='http://www.googleapis.com/auth/drive'
+REDIRECT_URI='urn:ietf:wg:oauth:2.0:oob'
+#create a new api & load drive api
+client='Google::APIClient.new'
+drive=client.discoverd.api('drive',v2)
+#auth reqsting
+client.authorization.client_id=CLIENT_ID
+client.authorization.client_secret=CLIENT_SECRET
+client.authorization.scope=OAUTH_SCOPE
+client.authorization.redirect_uri=REDRICT_URI
+
+uri=client.authorization.authorization_uri
+puts uri
+quickstart.rb[utf-8,unix][ruby]
+"quickstart.rb"
+
